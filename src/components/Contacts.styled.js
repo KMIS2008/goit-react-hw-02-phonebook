@@ -5,5 +5,5 @@ display: block;
 margin-top: 15px;
 margin-left: 20px;
 font-weight: normal;
-font-size: 18px;
+font-size: 22px;
 `
