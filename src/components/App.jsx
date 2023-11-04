@@ -6,7 +6,8 @@ import {FormAddContact} from './FormAddContact';
 import {SectionTitle} from './SectionTitle';
 import {ContactsList} from './Contacts';
 import {FilterConctacts} from './Filter.js';
-import {TitleContacts} from './App.styled';
+import {TitleContacts,
+        Contater} from './App.styled';
 
 
 export class App extends Component {
@@ -23,16 +24,16 @@ export class App extends Component {
 
   addContact =(newContact)=> {
 
-const newAddContact = this.state.contacts.some(contact=> newContact.name.toLowerCase() === contact.name.toLowerCase());
+    const newAddContact = this.state.contacts.some(contact=> newContact.name.toLowerCase() === contact.name.toLowerCase());
 
-if(newAddContact){
-  alert(`${newContact.name} is already in contacts`);
-  return;
-}
+      if(newAddContact){
+        alert(`${newContact.name} is already in contacts`);
+        return;
+      }
 
-this.setState(prevState=> {
-  return {
-    contacts: [...prevState.contacts,
+     this.setState(prevState=> {
+     return {
+     contacts: [...prevState.contacts,
                 {
                   ...newContact,
                   id: nanoid(),
@@ -48,6 +49,14 @@ this.setState(prevState=> {
     )
   }
 
+  deleteContact = contactId=>{
+     this.setState(prevState=>{
+     return {
+      contacts: prevState.contacts.filter(contact=> contact.id !== contactId),
+     };
+    });
+  };
+
   render(){
 
     const visibleContact = this.state.contacts.filter(contact=>{
@@ -55,9 +64,8 @@ this.setState(prevState=> {
       return hasContact;
     })
 
-
   return (
-    <div>
+    <Contater>
      
     <SectionTitle title="Phonebook"/>
 
@@ -67,12 +75,12 @@ this.setState(prevState=> {
 
     <FilterConctacts name={this.state.name} onNameFilter={this.filterName}/>
     
-    <ContactsList contacts ={visibleContact}/>
+    <ContactsList contacts ={visibleContact} ondelete={this.deleteContact}/>
   
 
       <GlobalStyle/>
 
-    </div>
+    </Contater>
   );
   }
 };
