@@ -2,10 +2,10 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid'
 import { GlobalStyle } from './GlobalStyle';
-import {FormAddContact} from './FormAddContact';
-import {SectionTitle} from './SectionTitle';
-import {ContactsList} from './Contacts';
-import {FilterConctacts} from './Filter.js';
+import {FormAddContact} from './FormAddContact/FormAddContact';
+import {SectionTitle} from './SectionTitle/SectionTitle';
+import {ContactsList} from './Contacts/Contacts';
+import {FilterConctacts} from './Filter/Filter';
 import {TitleContacts,
         Contater} from './App.styled';
 
@@ -42,6 +42,12 @@ export class App extends Component {
           };
        });
   }
+
+  // filterName =(newName)=>{
+  //   this.setState(
+  //    {filter: newName} 
+  //   )
+  // }
 
   filterName =(newName)=>{
     this.setState(
