@@ -18,9 +18,6 @@ export const FormAddContact = ({onAdd})=> {
         actions.resetForm();
       }}
 
-    // onSubmit={(values, actions) => {
-    //     onAdd(values);
-    //     actions.resetForm(); }}
     >
       <FormStyle>
            <FormLabel >Name
