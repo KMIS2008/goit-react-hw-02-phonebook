@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FormFilter = styled.form`
-padding:   ${p=>p.theme.spacing(4)};
+/* padding:   ${p=>p.theme.spacing(4)}; */
 `
 
 export const TitleFilter = styled.label`
@@ -13,5 +13,5 @@ font-size: 22px;
 
 export const InputFilter = styled.input`
 width: 350px;
-height: 50px;
+height: 30px;
 border: 3px solid ${p=>p.theme.colors.darkblue};`

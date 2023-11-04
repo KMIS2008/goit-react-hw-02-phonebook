@@ -6,6 +6,7 @@ import {FormAddContact} from './FormAddContact';
 import {SectionTitle} from './SectionTitle';
 import {ContactsList} from './Contacts';
 import {FilterConctacts} from './Filter.js';
+import {TitleContacts} from './App.styled';
 
 
 export class App extends Component {
@@ -18,7 +19,6 @@ export class App extends Component {
     ],
     filter: '',
     name: '',
-    number: ''
   }
 
   addContact =(newContact)=> {
@@ -50,15 +50,17 @@ this.setState(prevState=> {
 
   return (
     <div>
-     s
-    <SectionTitle title="Phonebook">
-        <FormAddContact onAdd={this.addContact} />
-    </SectionTitle>
+     
+    <SectionTitle title="Phonebook"/>
 
-    <SectionTitle title="Contacts">
-       <FilterConctacts name={this.state.name} onNameFilter={this.filterName}/>
-       <ContactsList contacts ={visibleContact}/>
-    </SectionTitle>
+    <FormAddContact onAdd={this.addContact} />
+   
+    <TitleContacts>Contacts</TitleContacts>
+
+    <FilterConctacts name={this.state.name} onNameFilter={this.filterName}/>
+    
+    <ContactsList contacts ={visibleContact}/>
+  
 
       <GlobalStyle/>
 
