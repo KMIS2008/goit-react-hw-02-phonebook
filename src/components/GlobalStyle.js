@@ -25,7 +25,7 @@ tr:nth-child(even) {
 }
 
   ul {
-  list-style: none;
+  list-style: circle;
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
