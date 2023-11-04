@@ -10,7 +10,8 @@ import {ContactsList} from './Contacts';
 export class App extends Component {
   state = {
     contacts: [],
-    name: ''
+    name: '',
+    number: '',
   }
 
   addContact =(newContact)=> {
@@ -25,6 +26,8 @@ this.setState(prevState=> {
           };
        });
   }
+
+
 
   render(){
 
