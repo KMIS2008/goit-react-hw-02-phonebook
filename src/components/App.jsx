@@ -19,7 +19,6 @@ export class App extends Component {
       {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
     ],
     filter: '',
-    name: '',
   }
 
   addContact =(newContact)=> {
@@ -43,15 +42,9 @@ export class App extends Component {
        });
   }
 
-  // filterName =(newName)=>{
-  //   this.setState(
-  //    {filter: newName} 
-  //   )
-  // }
-
   filterName =(newName)=>{
     this.setState(
-     {name: newName} 
+     {filter: newName} 
     )
   }
 
@@ -66,7 +59,7 @@ export class App extends Component {
   render(){
 
     const visibleContact = this.state.contacts.filter(contact=>{
-      const hasContact = contact.name.toLowerCase().includes(this.state.name.toLowerCase());
+      const hasContact = contact.name.toLowerCase().includes(this.state.filter.toLowerCase());
       return hasContact;
     })
 
@@ -79,7 +72,7 @@ export class App extends Component {
    
     <TitleContacts>Contacts</TitleContacts>
 
-    <FilterConctacts name={this.state.name} onNameFilter={this.filterName}/>
+    <FilterConctacts filter={this.state.filter} onNameFilter={this.filterName}/>
     
     <ContactsList contacts ={visibleContact} ondelete={this.deleteContact}/>
   

@@ -4,13 +4,13 @@ import {FormFilter,
         TitleFilter} from './Filter.styled';
 
 
-export const FilterConctacts = ({name, onNameFilter})=>{
+export const FilterConctacts = ({filter, onNameFilter})=>{
 return(
     
         <FormFilter>
             <TitleFilter> 
                 Find contacts by name
-                <InputFilter value={name} onChange={event=>onNameFilter(event.target.value)}/>
+                <InputFilter value={filter} onChange={event=>onNameFilter(event.target.value)}/>
             </TitleFilter>
         </FormFilter>
 )
