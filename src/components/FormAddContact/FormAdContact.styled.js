@@ -1,6 +1,7 @@
 import {
     Form,
     Field,
+    ErrorMessage,
   } from 'formik';
 
 import styled from 'styled-components';
@@ -40,4 +41,6 @@ export const FormLabel = styled.label`
   text-align: start;
 `;
 
-
+export const ErrorMsg = styled(ErrorMessage)`
+color: ${p=>p.theme.colors.red};
+`
